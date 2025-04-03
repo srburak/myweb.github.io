@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özür Dilerim</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #fbeee6;
+        }
+        .container {
+            text-align: center;
+        }
+        img {
+            width: 200px;
+            border-radius: 10px;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            position: relative;
+        }
+        #yes {
+            background-color: green;
+            color: white;
+        }
+        #no {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="1000016416.jpg" alt="Sevimli Kedi">
+        <h2>Seni Üzdüğüm İçin Özür Dilerim, Barışalımmı Güzelimm?</h2>
+        <div class="buttons">
+            <button id="no">Hayır</button>
+            <button id="yes" onclick="alert('Seni seviyorum! ♥')">Evet</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("no").addEventListener("mouseenter", function() {
+            let button = this;
+            let maxX = window.innerWidth - button.offsetWidth - 50;
+            let maxY = window.innerHeight - button.offsetHeight - 50;
+            let x = Math.random() * maxX;
+            let y = Math.random() * maxY;
+            button.style.position = "absolute";
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
